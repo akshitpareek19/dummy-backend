@@ -1,12 +1,12 @@
 const express = require("express");
 const app = express();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 8080;
 
 app.get("/", (req, res) => {
-  res.send("working backend on gcp!!");
+  res.send("Backend running on Cloud Run!");
 });
 
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Server running on port 3000`);
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
